@@ -1,0 +1,19 @@
+environment {
+        EMAIL_TO = 'vinit.pania@cloverinfotech.com','sakshi.chalke@cloverinfotech.com'
+    }
+   
+post {
+        success {
+             mail(body: 'This is Sample Email from Pipeline success', subject: 'Pipeline Subject', to: 'sakshi.chalke@cloverinfotech.com')
+        }
+        
+        failure {
+            mail(body: 'This is Sample Email from Pipeline failure', subject: 'Pipeline Subject', to: 'sakshi.chalke@cloverinfotech.com')
+        }
+        unstable {
+            mail(body: 'This is Sample Email from Pipeline unstable', subject: 'Pipeline Subject', to: 'sakshi.chalke@cloverinfotech.com')
+        }
+        changed {
+            mail(body: 'This is Sample Email from Pipeline changed', subject: 'Pipeline Subject', to: 'sakshi.chalke@cloverinfotech.com')
+        }
+    }

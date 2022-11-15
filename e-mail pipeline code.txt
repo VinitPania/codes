@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Ok') {
+            steps {
+                echo "Ok"
+            }
+        }
+    }
+     environment {
+        EMAIL_TO = 'sakshi.chalke@cloverinfotech.com'
+    }
+    post {
+        always {
+            mail(body: 'This is Sample Email from Pipeline', subject: 'Pipeline Subject', to: 'sakshi.chalke@cloverinfotech.com')
+       }
+    }
+}
